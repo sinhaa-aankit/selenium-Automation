@@ -11,12 +11,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class flipkartAutomation {
+	
 	public static void main(String[] args) throws InterruptedException {
+		
 		String chromeDriverLocation = "C:\\Users\\SNiP3R\\Downloads\\chromedriver_win32_1\\chromedriver.exe";
 		String chromeDriverKey = "webdriver.chrome.driver";
 		System.setProperty(chromeDriverKey, chromeDriverLocation);
 		WebDriver chromeDriver = new ChromeDriver();
 		chromeDriver.manage().window().maximize();
+		
 		chromeDriver.get("https://www.flipkart.com/");
 		chromeDriver.manage().timeouts();
 		chromeDriver.findElement(By.cssSelector("._2KpZ6l._2doB4z")).click();
@@ -37,6 +40,7 @@ public class flipkartAutomation {
 		chromeDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 		chromeDriver.findElement(By.cssSelector("._3hShhO")).click();
 		chromeDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		
 		//brand
 		List<WebElement> choose = chromeDriver.findElements(By.cssSelector("._1EDlbo._17qiPn"));
 		choose.get(0).click();
@@ -70,15 +74,16 @@ public class flipkartAutomation {
 		brands = chromeDriver.findElements(By.cssSelector(".vd8GqM"));
 		chromeDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		brands.get(36).click();
+		
 		//
 		List<WebElement> ele = chromeDriver.findElements(By.cssSelector(".row.CQXY4c._3T4CNT"));
-//		System.out.println(ele.size());
         for(int j=0;j<ele.size();j++) {
             String listOfValues = ele.get(j).getText();
             if(listOfValues.contains("Weight")) {
             	System.out.println(listOfValues);
             }
         }
+        
 //		for(int i=0; i<66; i++) System.out.println(brands.get(i).getText());
 //		chromeDriver.findElement(By.xpath("//*[@id=\"fk-compare-page\"]/div/div/div/div[1]/div[2]/div/div[2]/div[1]/div/div[2]/div[2]/div/div[27]")).click();
 //		chromeDriver.findElements(By.cssSelector(".vd8GqM")).get(0).click();

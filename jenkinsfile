@@ -3,7 +3,7 @@ pipeline {
 	stages{
 		stage('Automation_101') {
 			steps {
-				git 'https://github.com/sinhaa-aankit/selenium-Automation.git'
+				echo 'Well Done'
 			}
 		}
 	}

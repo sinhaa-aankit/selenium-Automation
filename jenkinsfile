@@ -1,6 +1,8 @@
 pipeline {
 	agent any
-	def mvnHome 
+	tools{
+		maven 'MAVEN3'
+	} 
 	stages{
 		stage('Automation_101') {
 			steps {

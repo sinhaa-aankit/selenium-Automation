@@ -1,0 +1,10 @@
+pipeline {
+	agent{ label 'selenium'}
+	stages{
+		stage('Automation from git'){
+			steps {
+				echo "Selenium Automation Basics"
+			}
+		}
+	}
+}

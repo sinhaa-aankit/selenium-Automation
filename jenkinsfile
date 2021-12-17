@@ -6,7 +6,23 @@ pipeline {
 	stages{
 		stage('Automation_101') {
 			steps {
-				echo 'Well Done'
+				git 'https://github.com/sinhaa-aankit/selenium-Automation.git'
+			}
+		}
+		stage('Build') {
+			steps{
+				sh 'mvn clean compile'
+			}
+		}
+		stage('Test') {
+			steps{
+				sh 'mvn test'
+				junit '**/target/surfire-reports/TEST-*.xml'
+			}
+		}
+		stage('Package') {
+			steps{
+				sh 'mvn package'
 			}
 		}
 	}

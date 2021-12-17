@@ -1,8 +1,6 @@
 pipeline {
 	agent any
-	tools{
-		maven 'MAVEN3'
-	} 
+	tools any
 	stages{
 		stage('Automation_101') {
 			steps {

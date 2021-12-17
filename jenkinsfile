@@ -1,6 +1,5 @@
 pipeline {
 	agent any
-	tools any
 	stages{
 		stage('Automation_101') {
 			steps {

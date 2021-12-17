@@ -1,9 +1,9 @@
 pipeline {
-	agent{ label 'linux'}
+	agent any
 	stages{
-		stage('Automation from git'){
+		stage('Automation_101') {
 			steps {
-				echo "Selenium Automation Basics"
+				echo 'Selenium Automation Basics'
 			}
 		}
 	}

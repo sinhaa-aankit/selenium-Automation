@@ -6,12 +6,12 @@ pipeline {
 	stages{
 		stage('Automation_101') {
 			steps {
-				git 'https://github.com/sinhaa-aankit/selenium-Automation.git'
-
+				echo "Starting"
 			}
 		}
 		stage('Build') {
 			steps{
+				git 'https://github.com/sinhaa-aankit/selenium-Automation.git'
 				sh './mvn clean compile'
 			}
 		}

@@ -7,22 +7,12 @@ pipeline {
 		stage('Automation_101') {
 			steps {
 				git 'https://github.com/sinhaa-aankit/selenium-Automation.git'
+
 			}
 		}
 		stage('Build') {
 			steps{
-				sh 'mvn clean compile'
-			}
-		}
-		stage('Test') {
-			steps{
-				sh 'mvn test'
-				junit '**/target/surefire-reports/TEST-*.xml'
-			}
-		}
-		stage('Package') {
-			steps{
-				sh 'mvn package'
+				sh './mvn clean compile'
 			}
 		}
 	}
